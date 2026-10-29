@@ -244,7 +244,7 @@ def create_video(lesson, duration_minutes, language, progress_callback):
     clips = []
     for video_path, audio_path, target_dur in zip(scene_paths, audio_paths, durations):
         audio = AudioFileClip(audio_path)
-       visual = VideoFileClip(video_path).set_duration(target_dur)
+    visual = VideoFileClip(video_path).set_duration(target_dur)
         # Use the generated scene MP4 as the visual source so the subtle motion is preserved.
         from moviepy.editor import VideoFileClip
         visual = VideoFileClip(video_path).set_duration(target_dur)
