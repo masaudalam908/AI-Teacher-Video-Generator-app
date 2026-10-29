@@ -101,7 +101,7 @@ Return ONLY valid JSON with this schema:
 Create between {max(4, duration_minutes)} and {min(15, duration_minutes+3)} scenes. Make the lesson accurate, step-by-step, age-neutral, and useful. Include examples and a recap. Do not invent formulas for topics where they do not apply. Keep board points concise. Avoid markdown fences."""
     try:
         client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
+        response = client.models.generate_content(model="gemini-3.8-flash", contents=prompt)
         raw = response.text.strip()
         raw = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw, flags=re.I)
         data = json.loads(raw)
